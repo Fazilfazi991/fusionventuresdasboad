@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { supabase } from '../lib/supabaseClient.js';
+import { isSupabaseConfigured, supabase } from '../lib/supabaseClient.js';
 
 const AuthContext = createContext(null);
 
@@ -9,6 +9,11 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setLoading(false);
+      return undefined;
+    }
+
     let active = true;
 
     supabase.auth.getSession().then(({ data }) => {
@@ -35,8 +40,19 @@ export function AuthProvider({ children }) {
       session,
       user,
       loading,
-      signIn: (email, password) => supabase.auth.signInWithPassword({ email, password }),
-      signOut: () => supabase.auth.signOut(),
+      isSupabaseConfigured,
+      signIn: (email, password) => {
+        if (!supabase) {
+          return {
+            error: {
+              message: 'Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in Vercel.',
+            },
+          };
+        }
+
+        return supabase.auth.signInWithPassword({ email, password });
+      },
+      signOut: () => supabase?.auth.signOut(),
     }),
     [loading, session, user],
   );

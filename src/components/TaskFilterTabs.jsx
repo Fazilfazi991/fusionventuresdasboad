@@ -1,10 +1,11 @@
-export function TaskFilterTabs({ filters, active = 'All' }) {
+export function TaskFilterTabs({ filters, active = 'All', onChange }) {
   return (
     <div className="flex gap-2 overflow-x-auto pb-1">
       {filters.map((filter) => (
         <button
           key={filter}
           type="button"
+          onClick={() => onChange(filter)}
           className={`h-10 shrink-0 rounded-full border px-4 text-sm font-medium transition ${
             filter === active
               ? 'border-zinc-950 bg-zinc-950 text-white'

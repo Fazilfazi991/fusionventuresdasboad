@@ -1,6 +1,6 @@
 import { MyTaskCard } from './MyTaskCard.jsx';
 
-export function TaskColumn({ title, tasks }) {
+export function TaskColumn({ title, tasks, onEdit, onStatusChange, onDelete }) {
   return (
     <section className="rounded-lg border border-zinc-200 bg-zinc-50 p-4">
       <div className="flex items-center justify-between">
@@ -10,9 +10,21 @@ export function TaskColumn({ title, tasks }) {
         </span>
       </div>
       <div className="mt-4 space-y-3">
-        {tasks.map((task) => (
-          <MyTaskCard key={task.id} task={task} />
-        ))}
+        {tasks.length ? (
+          tasks.map((task) => (
+            <MyTaskCard
+              key={task.id}
+              task={task}
+              onEdit={onEdit}
+              onStatusChange={onStatusChange}
+              onDelete={onDelete}
+            />
+          ))
+        ) : (
+          <div className="rounded-lg border border-dashed border-zinc-200 bg-white p-4 text-center text-xs font-medium text-zinc-400">
+            Empty
+          </div>
+        )}
       </div>
     </section>
   );

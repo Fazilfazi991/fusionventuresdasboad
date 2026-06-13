@@ -1,4 +1,5 @@
 import { CalendarDays } from 'lucide-react';
+import { TaskActionsMenu } from './TaskActionsMenu.jsx';
 
 const priorityClasses = {
   High: 'bg-zinc-950 text-white',
@@ -18,7 +19,7 @@ function Badge({ children, className }) {
   return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-medium ${className}`}>{children}</span>;
 }
 
-export function MyTaskCard({ task }) {
+export function MyTaskCard({ task, onEdit, onStatusChange, onDelete }) {
   return (
     <article className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm transition hover:border-zinc-300 hover:shadow-md">
       <div className="flex items-start justify-between gap-3">
@@ -26,7 +27,10 @@ export function MyTaskCard({ task }) {
           <h3 className="text-sm font-semibold leading-5 text-zinc-950">{task.title}</h3>
           <p className="mt-1 text-xs font-medium text-zinc-500">{task.venture}</p>
         </div>
-        <Badge className={priorityClasses[task.priority]}>{task.priority}</Badge>
+        <div className="flex shrink-0 items-center gap-2">
+          <Badge className={priorityClasses[task.priority]}>{task.priority}</Badge>
+          <TaskActionsMenu task={task} onEdit={onEdit} onStatusChange={onStatusChange} onDelete={onDelete} />
+        </div>
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -38,6 +42,7 @@ export function MyTaskCard({ task }) {
         <CalendarDays className="h-4 w-4" />
         Due {task.dueDate}
       </div>
+      {task.notes ? <p className="mt-3 line-clamp-2 text-xs leading-5 text-zinc-500">{task.notes}</p> : null}
     </article>
   );
 }

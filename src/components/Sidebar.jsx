@@ -5,7 +5,7 @@ import { navItems } from '../data/dashboardData.js';
 
 export function FusionMark({ compact = false }) {
   return (
-    <div className={`grid shrink-0 place-items-center overflow-hidden ${compact ? 'h-12 w-36' : 'h-20 w-full'}`}>
+    <div className={`grid shrink-0 place-items-center overflow-hidden ${compact ? 'h-16 w-44' : 'h-20 w-full'}`}>
       <img
         src="/fusion-ventures-vector-white.svg"
         alt="Fusion Ventures"

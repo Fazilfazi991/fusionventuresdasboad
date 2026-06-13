@@ -38,9 +38,8 @@ export function Login() {
   return (
     <main className="grid min-h-screen place-items-center bg-zinc-50 px-5 py-10">
       <section className="w-full max-w-md rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
-        <div className="rounded-lg bg-zinc-950 p-4">
+        <div className="grid min-h-36 place-items-center rounded-lg bg-zinc-950 p-6">
           <FusionMark compact />
-          <p className="mt-4 text-sm font-medium text-zinc-300">Fusion OS</p>
         </div>
 
         <div className="mt-7">

@@ -1,8 +1,7 @@
 -- Fusion OS starter data
 -- Run after creating auth users for Ayisha, Fazil, and Thameem.
 
-update public.users set role = 'Admin' where lower(name) = 'fazil';
-update public.users set role = 'Member' where lower(name) in ('ayisha', 'thameem');
+update public.users set role = 'Admin' where lower(name) in ('fazil', 'ayisha', 'thameem');
 
 insert into public.ventures (name, slug, description, stage, priority, progress, status)
 values

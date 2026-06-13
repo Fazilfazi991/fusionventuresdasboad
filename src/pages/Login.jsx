@@ -23,7 +23,8 @@ export function Login() {
     setError('');
     setSubmitting(true);
 
-    const { error: signInError } = await signIn(email, password);
+    const loginEmail = email.includes('@') ? email.trim() : `${email.trim().toLowerCase()}@fusionos.local`;
+    const { error: signInError } = await signIn(loginEmail, password);
     setSubmitting(false);
 
     if (signInError) {
@@ -49,12 +50,13 @@ export function Login() {
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <label className="block">
-            <span className="text-sm font-medium text-zinc-700">Email</span>
+            <span className="text-sm font-medium text-zinc-700">Username</span>
             <input
-              type="email"
+              type="text"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               className="mt-2 h-11 w-full rounded-lg border border-zinc-200 bg-white px-3 text-sm text-zinc-900 outline-none focus:border-zinc-500"
+              placeholder="fazil"
               required
             />
           </label>

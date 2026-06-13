@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { FusionMark } from '../components/Sidebar.jsx';
 import { useAuth } from '../contexts/AuthContext.jsx';
@@ -9,6 +10,7 @@ export function Login() {
   const { isSupabaseConfigured, session, signIn } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
@@ -23,7 +25,8 @@ export function Login() {
     setError('');
     setSubmitting(true);
 
-    const loginEmail = email.includes('@') ? email.trim() : `${email.trim().toLowerCase()}@fusionos.local`;
+    const username = email.trim().toLowerCase();
+    const loginEmail = username.includes('@') ? username : `${username}@fusionos.local`;
     const { error: signInError } = await signIn(loginEmail, password);
     setSubmitting(false);
 
@@ -45,6 +48,9 @@ export function Login() {
         <div className="mt-7">
           <h1 className="text-3xl font-semibold text-zinc-950">Login</h1>
           <p className="mt-2 text-sm text-zinc-500">Sign in to manage ventures, tasks, and web dev leads.</p>
+          <p className="mt-2 text-xs font-medium text-zinc-400">
+            Use username only, for example <span className="font-mono text-zinc-600">fazil</span>.
+          </p>
         </div>
 
         {!isSupabaseConfigured ? (
@@ -70,13 +76,23 @@ export function Login() {
 
           <label className="block">
             <span className="text-sm font-medium text-zinc-700">Password</span>
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className="mt-2 h-11 w-full rounded-lg border border-zinc-200 bg-white px-3 text-sm text-zinc-900 outline-none focus:border-zinc-500"
-              required
-            />
+            <div className="mt-2 flex h-11 items-center rounded-lg border border-zinc-200 bg-white px-3 focus-within:border-zinc-500">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                className="h-full min-w-0 flex-1 border-0 bg-transparent text-sm text-zinc-900 outline-none"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((value) => !value)}
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
+                className="grid h-8 w-8 place-items-center rounded-md text-zinc-500 hover:bg-zinc-50 hover:text-zinc-950"
+              >
+                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </button>
+            </div>
           </label>
 
           {error ? (

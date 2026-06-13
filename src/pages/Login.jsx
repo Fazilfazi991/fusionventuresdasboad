@@ -31,7 +31,11 @@ export function Login() {
     setSubmitting(false);
 
     if (signInError) {
-      setError(signInError.message);
+      setError(
+        signInError.message === 'Invalid login credentials'
+          ? `Invalid login credentials. In Supabase Auth, this username must exist as ${loginEmail} with password 12345678 and confirmed email.`
+          : signInError.message,
+      );
       return;
     }
 

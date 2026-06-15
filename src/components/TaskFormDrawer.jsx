@@ -1,6 +1,14 @@
 import { X } from 'lucide-react';
 
-const ventures = ['Dearelle', 'Plumlet', 'Website Builder', 'Web Development', 'Ed Tech Platform'];
+const ventures = [
+  'Dearelle',
+  'Plumlet',
+  'Website Builder',
+  'Web Development',
+  'Education System',
+  'Resume Builder',
+  'Portfolio Builder',
+];
 const categories = [
   'Development',
   'Testing',

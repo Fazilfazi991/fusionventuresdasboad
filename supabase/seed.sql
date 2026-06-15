@@ -9,7 +9,9 @@ values
   ('Plumlet', 'plumlet', 'Marketplace flow testing for seller, buyer, orders, custom orders, payments, and back order tracking.', 'Testing', 'High Priority', 45, 'Active'),
   ('Website Builder', 'website-builder', 'Website builder platform development, branding, account testing, and builder flow testing.', 'Development', 'Medium Priority', 60, 'Active'),
   ('Web Development', 'web-development', 'Web development service with lead tracking, client projects, follow-ups, and pending work.', 'Live Service', 'Medium Priority', 85, 'Active'),
-  ('Ed Tech Platform', 'education-system', 'Education platform planning, member connection, curriculum setup, and course structure.', 'Planning', 'Low Priority', 20, 'Active')
+  ('Education System', 'education-system', 'Education platform planning, member connection, curriculum setup, and course structure.', 'Planning', 'Low Priority', 20, 'Active'),
+  ('Resume Builder', 'resume-builder', 'Online resume builder platform with templates, PDF download, and user customization.', 'Development + Launch Prep', 'High Priority', 80, 'Active'),
+  ('Portfolio Builder', 'portfolio-builder', 'Portfolio website builder for creating simple one-page portfolio websites with templates.', 'Development + Launch Prep', 'High Priority', 70, 'Active')
 on conflict (slug) do update set
   name = excluded.name,
   description = excluded.description,

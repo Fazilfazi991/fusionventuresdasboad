@@ -32,8 +32,8 @@ export const navItems = [
 ];
 
 export const kpis = [
-  { label: 'Active Ventures', value: 5, icon: Rocket, tone: 'violet' },
-  { label: 'My Tasks', value: 9, icon: CheckSquare, tone: 'blue' },
+  { label: 'Active Ventures', value: 7, icon: Rocket, tone: 'violet' },
+  { label: 'My Tasks', value: 17, icon: CheckSquare, tone: 'blue' },
   { label: 'In Testing', value: 11, icon: FlaskConical, tone: 'purple' },
   { label: 'Web Dev Leads', value: 14, icon: Code2, tone: 'sky' },
 ];
@@ -68,11 +68,25 @@ export const ventures = [
     nextAction: 'Follow up leads and pending client work',
   },
   {
-    name: 'Ed Tech Platform',
+    name: 'Education System',
     stage: 'Planning',
     priority: 'Low',
     pending: 5,
     nextAction: 'Prepare curriculum outline',
+  },
+  {
+    name: 'Resume Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'High',
+    pending: 6,
+    nextAction: 'Add more templates, connect payment gateway, and finalize domain',
+  },
+  {
+    name: 'Portfolio Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'High',
+    pending: 6,
+    nextAction: 'Finalize domain, add templates, and connect payment gateway',
   },
 ];
 
@@ -87,7 +101,9 @@ export const updates = [
   { text: 'Plumlet: Seller flow test cases updated', time: '10:30 AM' },
   { text: 'Website Builder: Developer accounts tested', time: '09:15 AM' },
   { text: 'Web Development: New lead added', time: 'Yesterday' },
-  { text: 'Ed Tech Platform: Outline draft created', time: 'Yesterday' },
+  { text: 'Education System: Outline draft created', time: 'Yesterday' },
+  { text: 'Resume Builder: PDF download is working', time: 'Yesterday' },
+  { text: 'Portfolio Builder: Template gallery updated', time: 'Yesterday' },
 ];
 
 export const team = [
@@ -98,13 +114,21 @@ export const team = [
 
 export const quickIcons = { Bell, Target, Zap, UsersRound };
 
-export const ventureFilters = ['All', 'Launch Prep', 'Testing', 'Development', 'Live Service', 'Planning'];
+export const ventureFilters = [
+  'All',
+  'Launch Prep',
+  'Testing',
+  'Development',
+  'Development + Launch Prep',
+  'Live Service',
+  'Planning',
+];
 
 export const ventureSummary = [
-  { label: 'Total Ventures', value: 5, icon: Layers3 },
-  { label: 'Active Ventures', value: 4, icon: BriefcaseBusiness },
-  { label: 'In Testing', value: 2, icon: FlaskConical },
-  { label: 'High Priority', value: 2, icon: Target },
+  { label: 'Total Ventures', value: 7, icon: Layers3 },
+  { label: 'Active Ventures', value: 6, icon: BriefcaseBusiness },
+  { label: 'In Testing', value: 4, icon: FlaskConical },
+  { label: 'High Priority', value: 4, icon: Target },
 ];
 
 export const ventureCards = [
@@ -162,7 +186,7 @@ export const ventureCards = [
   },
   {
     id: 'education-system',
-    name: 'Ed Tech Platform',
+    name: 'Education System',
     stage: 'Planning',
     priority: 'Low Priority',
     description: 'Education platform planning, members, and curriculum setup.',
@@ -172,6 +196,32 @@ export const ventureCards = [
     blocked: 0,
     nextAction: 'Prepare curriculum outline',
     icon: ListFilter,
+  },
+  {
+    id: 'resume-builder',
+    name: 'Resume Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'High Priority',
+    description: 'Online resume builder platform with templates, PDF download, and user customization.',
+    progress: 80,
+    pending: 6,
+    testing: 3,
+    blocked: 0,
+    nextAction: 'Add more templates, connect payment gateway, and finalize domain',
+    icon: FileText,
+  },
+  {
+    id: 'portfolio-builder',
+    name: 'Portfolio Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'High Priority',
+    description: 'Portfolio website builder for creating simple one-page portfolio websites with templates.',
+    progress: 70,
+    pending: 6,
+    testing: 3,
+    blocked: 0,
+    nextAction: 'Finalize domain, add templates, and connect payment gateway',
+    icon: BriefcaseBusiness,
   },
 ];
 
@@ -334,7 +384,7 @@ export const ventureDetails = [
   },
   {
     id: 'education-system',
-    name: 'Ed Tech Platform',
+    name: 'Education System',
     stage: 'Planning',
     priority: 'Low Priority',
     progress: 20,
@@ -359,6 +409,84 @@ export const ventureDetails = [
       { text: 'Member planning started', time: 'Yesterday', note: 'Role list is being prepared.' },
     ],
     files: ['Curriculum Sheet', 'Member List', 'Planning Notes'],
+  },
+  {
+    id: 'resume-builder',
+    name: 'Resume Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'High Priority',
+    progress: 80,
+    description: 'Online resume builder platform with templates, PDF download, and user customization.',
+    summary: { pendingTasks: 6, testingItems: 3, blockedItems: 0, completed: 18 },
+    currentFocus: [
+      'Add more premium resume templates',
+      'Connect payment gateway',
+      'Finalize and connect domain',
+      'Test PDF download across templates',
+      'Improve resume template design quality',
+    ],
+    pendingTasks: [
+      { task: 'Add more premium resume templates', category: 'Development', status: 'In Progress', priority: 'High', due: 'May 28' },
+      { task: 'Add image upload support in selected templates', category: 'Development', status: 'To Do', priority: 'Medium', due: 'May 29' },
+      { task: 'Connect payment gateway', category: 'Payment Testing', status: 'To Do', priority: 'High', due: 'May 30' },
+      { task: 'Finalize and connect domain', category: 'Development', status: 'To Do', priority: 'High', due: 'May 30' },
+      { task: 'Test PDF download across templates', category: 'Testing', status: 'Testing', priority: 'High', due: 'May 31' },
+      { task: 'Final responsive testing', category: 'Testing', status: 'To Do', priority: 'Medium', due: 'Jun 01' },
+    ],
+    testingChecklist: [
+      { item: 'Template selection flow', area: 'Templates', status: 'Pending', notes: 'Verify all resume templates can be selected' },
+      { item: 'Resume editing flow', area: 'Editor', status: 'Pending', notes: 'Check content editing and save behavior' },
+      { item: 'Image upload flow', area: 'Uploads', status: 'Pending', notes: 'Test upload on selected templates' },
+      { item: 'PDF download', area: 'Export', status: 'In Progress', notes: 'PDF download is working, test across templates' },
+      { item: 'Payment flow', area: 'Payment', status: 'Pending', notes: 'Connect gateway before final payment test' },
+      { item: 'Mobile responsiveness', area: 'UI', status: 'Pending', notes: 'Final mobile layout pass' },
+    ],
+    blockers: [],
+    updates: [
+      { text: 'Resume builder website is around 80% completed', time: 'Today', note: 'Core platform flow is almost ready.' },
+      { text: 'PDF download is working', time: 'Yesterday', note: 'Export functionality is available.' },
+      { text: 'More templates and payment gateway are pending', time: 'Yesterday', note: 'Remaining launch prep items are clear.' },
+    ],
+    files: ['Website URL', 'Admin Panel', 'Template Folder', 'Testing Sheet'],
+  },
+  {
+    id: 'portfolio-builder',
+    name: 'Portfolio Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'High Priority',
+    progress: 70,
+    description: 'Portfolio website builder for creating simple one-page portfolio websites with templates.',
+    summary: { pendingTasks: 6, testingItems: 3, blockedItems: 0, completed: 14 },
+    currentFocus: [
+      'Finalize domain',
+      'Add more portfolio templates',
+      'Improve template gallery',
+      'Connect payment gateway',
+      'Test website publishing flow',
+    ],
+    pendingTasks: [
+      { task: 'Finalize domain', category: 'Development', status: 'To Do', priority: 'High', due: 'May 28' },
+      { task: 'Add more portfolio templates', category: 'Development', status: 'In Progress', priority: 'High', due: 'May 29' },
+      { task: 'Improve template gallery', category: 'Development', status: 'To Do', priority: 'Medium', due: 'May 30' },
+      { task: 'Connect payment gateway', category: 'Payment Testing', status: 'To Do', priority: 'High', due: 'May 30' },
+      { task: 'Test website publishing flow', category: 'Testing', status: 'Testing', priority: 'High', due: 'May 31' },
+      { task: 'Final responsive testing', category: 'Testing', status: 'To Do', priority: 'Medium', due: 'Jun 01' },
+    ],
+    testingChecklist: [
+      { item: 'Template preview flow', area: 'Templates', status: 'Pending', notes: 'Check preview before selection' },
+      { item: 'Template selection flow', area: 'Templates', status: 'Pending', notes: 'Verify template selection works' },
+      { item: 'Portfolio editing flow', area: 'Editor', status: 'Pending', notes: 'Test one-page editing flow' },
+      { item: 'Website publishing flow', area: 'Publishing', status: 'In Progress', notes: 'Validate publish flow end to end' },
+      { item: 'Payment flow', area: 'Payment', status: 'Pending', notes: 'Connect gateway before final payment test' },
+      { item: 'Mobile responsiveness', area: 'UI', status: 'Pending', notes: 'Final mobile layout pass' },
+    ],
+    blockers: [],
+    updates: [
+      { text: 'Portfolio Builder development is almost completed', time: 'Today', note: 'Core builder work is nearly ready.' },
+      { text: 'Main pending items are domain, templates, payment gateway, and final testing', time: 'Yesterday', note: 'Launch checklist is focused.' },
+      { text: 'Platform is around 70% completed', time: 'Yesterday', note: 'Progress is tracking toward launch prep.' },
+    ],
+    files: ['Website URL', 'Admin Panel', 'Template Folder', 'Testing Sheet'],
   },
 ];
 
@@ -393,7 +521,7 @@ export const myTasks = [
   {
     id: 'task-003',
     title: 'Prepare curriculum outline',
-    venture: 'Ed Tech Platform',
+    venture: 'Education System',
     category: 'Planning',
     priority: 'Low',
     dueDate: 'Jun 02',
@@ -453,6 +581,78 @@ export const myTasks = [
     dueDate: 'May 21',
     status: 'Completed',
   },
+  {
+    id: 'task-010',
+    title: 'Add more premium resume templates',
+    venture: 'Resume Builder',
+    category: 'Development',
+    priority: 'High',
+    dueDate: 'May 28',
+    status: 'In Progress',
+  },
+  {
+    id: 'task-011',
+    title: 'Connect payment gateway for Resume Builder',
+    venture: 'Resume Builder',
+    category: 'Payment Testing',
+    priority: 'High',
+    dueDate: 'May 30',
+    status: 'To Do',
+  },
+  {
+    id: 'task-012',
+    title: 'Finalize Resume Builder domain',
+    venture: 'Resume Builder',
+    category: 'Development',
+    priority: 'High',
+    dueDate: 'May 30',
+    status: 'To Do',
+  },
+  {
+    id: 'task-013',
+    title: 'Test PDF download across templates',
+    venture: 'Resume Builder',
+    category: 'Testing',
+    priority: 'High',
+    dueDate: 'May 31',
+    status: 'Testing',
+  },
+  {
+    id: 'task-014',
+    title: 'Finalize Portfolio Builder domain',
+    venture: 'Portfolio Builder',
+    category: 'Development',
+    priority: 'High',
+    dueDate: 'May 28',
+    status: 'To Do',
+  },
+  {
+    id: 'task-015',
+    title: 'Add portfolio templates',
+    venture: 'Portfolio Builder',
+    category: 'Development',
+    priority: 'High',
+    dueDate: 'May 29',
+    status: 'In Progress',
+  },
+  {
+    id: 'task-016',
+    title: 'Connect payment gateway for Portfolio Builder',
+    venture: 'Portfolio Builder',
+    category: 'Payment Testing',
+    priority: 'High',
+    dueDate: 'May 30',
+    status: 'To Do',
+  },
+  {
+    id: 'task-017',
+    title: 'Test website publishing flow',
+    venture: 'Portfolio Builder',
+    category: 'Testing',
+    priority: 'High',
+    dueDate: 'May 31',
+    status: 'Testing',
+  },
 ];
 
 export const todayAgenda = [
@@ -460,7 +660,7 @@ export const todayAgenda = [
   { time: '11:30 AM', task: 'Create seller account flow', venture: 'Plumlet' },
   { time: '02:00 PM', task: 'Follow up web development lead', venture: 'Web Development' },
   { time: '03:30 PM', task: 'Test developer account', venture: 'Website Builder' },
-  { time: '05:00 PM', task: 'Prepare curriculum outline', venture: 'Ed Tech Platform' },
+  { time: '05:00 PM', task: 'Prepare curriculum outline', venture: 'Education System' },
 ];
 
 export const taskActivity = [
@@ -475,7 +675,9 @@ export const workloadSummary = [
   { venture: 'Plumlet', tasks: 3 },
   { venture: 'Website Builder', tasks: 1 },
   { venture: 'Web Development', tasks: 1 },
-  { venture: 'Ed Tech Platform', tasks: 1 },
+  { venture: 'Education System', tasks: 1 },
+  { venture: 'Resume Builder', tasks: 4 },
+  { venture: 'Portfolio Builder', tasks: 4 },
 ];
 
 export const webDevLeadFilters = [

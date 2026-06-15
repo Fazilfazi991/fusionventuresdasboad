@@ -10,7 +10,15 @@ import { WorkloadSummaryCard } from '../components/WorkloadSummaryCard.jsx';
 import { myTasks, taskFilters } from '../data/dashboardData.js';
 import { CalendarClock, CheckCircle2, ClipboardList, Clock3 } from 'lucide-react';
 
-const ventureNames = ['Dearelle', 'Plumlet', 'Website Builder', 'Web Development', 'Ed Tech Platform'];
+const ventureNames = [
+  'Dearelle',
+  'Plumlet',
+  'Website Builder',
+  'Web Development',
+  'Education System',
+  'Resume Builder',
+  'Portfolio Builder',
+];
 
 function startOfDay(date) {
   const next = new Date(date);

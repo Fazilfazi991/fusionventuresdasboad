@@ -2,6 +2,7 @@ const stageClasses = {
   'Launch Prep': 'bg-zinc-950 text-white',
   Testing: 'bg-zinc-500 text-white',
   Development: 'bg-zinc-100 text-zinc-800',
+  'Development + Launch Prep': 'bg-zinc-950 text-white',
   'Live Service': 'border border-emerald-200 bg-emerald-50 text-emerald-700',
   Planning: 'bg-zinc-50 text-zinc-600',
 };

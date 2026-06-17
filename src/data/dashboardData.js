@@ -32,8 +32,8 @@ export const navItems = [
 ];
 
 export const kpis = [
-  { label: 'Active Ventures', value: 7, icon: Rocket, tone: 'violet' },
-  { label: 'My Tasks', value: 17, icon: CheckSquare, tone: 'blue' },
+  { label: 'Active Ventures', value: 8, icon: Rocket, tone: 'violet' },
+  { label: 'My Tasks', value: 22, icon: CheckSquare, tone: 'blue' },
   { label: 'In Testing', value: 11, icon: FlaskConical, tone: 'purple' },
   { label: 'Web Dev Leads', value: 14, icon: Code2, tone: 'sky' },
 ];
@@ -45,6 +45,13 @@ export const ventures = [
     priority: 'High',
     pending: 12,
     nextAction: 'Create social accounts and launch creatives',
+  },
+  {
+    name: 'Invitation Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'Medium',
+    pending: 5,
+    nextAction: 'Finalize name, buy domain, complete website, and prepare templates',
   },
   {
     name: 'Plumlet',
@@ -104,6 +111,7 @@ export const updates = [
   { text: 'Education System: Outline draft created', time: 'Yesterday' },
   { text: 'Resume Builder: PDF download is working', time: 'Yesterday' },
   { text: 'Portfolio Builder: Template gallery updated', time: 'Yesterday' },
+  { text: 'Invitation Builder: Website build started', time: 'Today' },
 ];
 
 export const team = [
@@ -125,8 +133,8 @@ export const ventureFilters = [
 ];
 
 export const ventureSummary = [
-  { label: 'Total Ventures', value: 7, icon: Layers3 },
-  { label: 'Active Ventures', value: 6, icon: BriefcaseBusiness },
+  { label: 'Total Ventures', value: 8, icon: Layers3 },
+  { label: 'Active Ventures', value: 7, icon: BriefcaseBusiness },
   { label: 'In Testing', value: 4, icon: FlaskConical },
   { label: 'High Priority', value: 4, icon: Target },
 ];
@@ -144,6 +152,19 @@ export const ventureCards = [
     blocked: 1,
     nextAction: 'Create social accounts and launch creatives',
     icon: Rocket,
+  },
+  {
+    id: 'invitation-builder',
+    name: 'Invitation Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'Medium Priority',
+    description: 'Digital wedding and date invitation website with customizable templates and launch-ready designs.',
+    progress: 55,
+    pending: 5,
+    testing: 2,
+    blocked: 0,
+    nextAction: 'Finalize name, buy domain, complete website, and prepare templates',
+    icon: CalendarClock,
   },
   {
     id: 'plumlet',
@@ -314,6 +335,42 @@ export const ventureDetails = [
       { text: 'Buyer flow checklist created', time: 'Yesterday, 05:15 PM', note: 'Buyer account checklist is ready.' },
     ],
     files: ['Website URL', 'Admin Panel', 'Testing Sheet', 'Bug Sheet'],
+  },
+  {
+    id: 'invitation-builder',
+    name: 'Invitation Builder',
+    stage: 'Development + Launch Prep',
+    priority: 'Medium Priority',
+    progress: 55,
+    description: 'Digital wedding and date invitation website with customizable templates and launch-ready designs.',
+    summary: { pendingTasks: 5, testingItems: 2, blockedItems: 0, completed: 6 },
+    currentFocus: [
+      'Finalize project name',
+      'Buy and connect domain',
+      'Complete website build',
+      'Create invitation templates and designs',
+      'Prepare launch testing',
+    ],
+    pendingTasks: [
+      { task: 'Finalize project name', category: 'Branding', status: 'To Do', priority: 'Medium', due: 'Jun 18' },
+      { task: 'Buy and connect domain', category: 'Development', status: 'To Do', priority: 'Medium', due: 'Jun 18' },
+      { task: 'Complete website build', category: 'Development', status: 'In Progress', priority: 'Medium', due: 'Jun 19' },
+      { task: 'Create invitation templates and designs', category: 'Design', status: 'To Do', priority: 'Medium', due: 'Jun 19' },
+      { task: 'Test invitation creation flow', category: 'Testing', status: 'To Do', priority: 'Medium', due: 'Jun 20' },
+    ],
+    testingChecklist: [
+      { item: 'Template preview flow', area: 'Templates', status: 'Pending', notes: 'Check template browsing and preview' },
+      { item: 'Invitation editing flow', area: 'Editor', status: 'Pending', notes: 'Test text and event detail edits' },
+      { item: 'Mobile responsiveness', area: 'UI', status: 'Pending', notes: 'Verify invitation pages on mobile' },
+      { item: 'Domain connection', area: 'Launch', status: 'Pending', notes: 'Complete after domain purchase' },
+    ],
+    blockers: [],
+    updates: [
+      { text: 'Website build is currently in progress', time: 'Today', note: 'Main development work has started.' },
+      { text: 'Name and domain are not finalized yet', time: 'Today', note: 'Brand decision is needed before launch.' },
+      { text: 'Templates and testing are next after the website build', time: 'Today', note: 'Launch target is the next few days.' },
+    ],
+    files: ['Website URL', 'Admin Panel', 'Template Folder', 'Testing Sheet'],
   },
   {
     id: 'website-builder',
@@ -583,6 +640,51 @@ export const myTasks = [
   },
   {
     id: 'task-010',
+    title: 'Finalize Invitation Builder name',
+    venture: 'Invitation Builder',
+    category: 'Branding',
+    priority: 'Medium',
+    dueDate: 'Jun 18',
+    status: 'To Do',
+  },
+  {
+    id: 'task-011',
+    title: 'Buy and connect Invitation Builder domain',
+    venture: 'Invitation Builder',
+    category: 'Development',
+    priority: 'Medium',
+    dueDate: 'Jun 18',
+    status: 'To Do',
+  },
+  {
+    id: 'task-012',
+    title: 'Complete Invitation Builder website',
+    venture: 'Invitation Builder',
+    category: 'Development',
+    priority: 'Medium',
+    dueDate: 'Jun 19',
+    status: 'In Progress',
+  },
+  {
+    id: 'task-013',
+    title: 'Create invitation templates and designs',
+    venture: 'Invitation Builder',
+    category: 'Design',
+    priority: 'Medium',
+    dueDate: 'Jun 19',
+    status: 'To Do',
+  },
+  {
+    id: 'task-014',
+    title: 'Test invitation creation flow',
+    venture: 'Invitation Builder',
+    category: 'Testing',
+    priority: 'Medium',
+    dueDate: 'Jun 20',
+    status: 'To Do',
+  },
+  {
+    id: 'task-015',
     title: 'Add more premium resume templates',
     venture: 'Resume Builder',
     category: 'Development',
@@ -591,7 +693,7 @@ export const myTasks = [
     status: 'In Progress',
   },
   {
-    id: 'task-011',
+    id: 'task-016',
     title: 'Connect payment gateway for Resume Builder',
     venture: 'Resume Builder',
     category: 'Payment Testing',
@@ -600,7 +702,7 @@ export const myTasks = [
     status: 'To Do',
   },
   {
-    id: 'task-012',
+    id: 'task-017',
     title: 'Finalize Resume Builder domain',
     venture: 'Resume Builder',
     category: 'Development',
@@ -609,7 +711,7 @@ export const myTasks = [
     status: 'To Do',
   },
   {
-    id: 'task-013',
+    id: 'task-018',
     title: 'Test PDF download across templates',
     venture: 'Resume Builder',
     category: 'Testing',
@@ -618,7 +720,7 @@ export const myTasks = [
     status: 'Testing',
   },
   {
-    id: 'task-014',
+    id: 'task-019',
     title: 'Finalize Portfolio Builder domain',
     venture: 'Portfolio Builder',
     category: 'Development',
@@ -627,7 +729,7 @@ export const myTasks = [
     status: 'To Do',
   },
   {
-    id: 'task-015',
+    id: 'task-020',
     title: 'Add portfolio templates',
     venture: 'Portfolio Builder',
     category: 'Development',
@@ -636,7 +738,7 @@ export const myTasks = [
     status: 'In Progress',
   },
   {
-    id: 'task-016',
+    id: 'task-021',
     title: 'Connect payment gateway for Portfolio Builder',
     venture: 'Portfolio Builder',
     category: 'Payment Testing',
@@ -645,7 +747,7 @@ export const myTasks = [
     status: 'To Do',
   },
   {
-    id: 'task-017',
+    id: 'task-022',
     title: 'Test website publishing flow',
     venture: 'Portfolio Builder',
     category: 'Testing',
@@ -672,6 +774,7 @@ export const taskActivity = [
 
 export const workloadSummary = [
   { venture: 'Dearelle', tasks: 3 },
+  { venture: 'Invitation Builder', tasks: 5 },
   { venture: 'Plumlet', tasks: 3 },
   { venture: 'Website Builder', tasks: 1 },
   { venture: 'Web Development', tasks: 1 },

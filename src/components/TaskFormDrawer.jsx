@@ -2,6 +2,7 @@ import { X } from 'lucide-react';
 
 const ventures = [
   'Dearelle',
+  'Invitation Builder',
   'Plumlet',
   'Website Builder',
   'Web Development',
@@ -11,6 +12,8 @@ const ventures = [
 ];
 const categories = [
   'Development',
+  'Branding',
+  'Design',
   'Testing',
   'Marketing Setup',
   'Payment Testing',

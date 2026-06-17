@@ -6,6 +6,7 @@ update public.users set role = 'Admin' where lower(name) in ('fazil', 'ayisha', 
 insert into public.ventures (name, slug, description, stage, priority, progress, status)
 values
   ('Dearelle', 'dearelle', 'E-commerce business for India launch preparation and growth.', 'Launch Prep', 'High Priority', 72, 'Active'),
+  ('Invitation Builder', 'invitation-builder', 'Digital wedding and date invitation website with customizable templates and launch-ready designs.', 'Development + Launch Prep', 'Medium Priority', 55, 'Active'),
   ('Plumlet', 'plumlet', 'Marketplace flow testing for seller, buyer, orders, custom orders, payments, and back order tracking.', 'Testing', 'High Priority', 45, 'Active'),
   ('Website Builder', 'website-builder', 'Website builder platform development, branding, account testing, and builder flow testing.', 'Development', 'Medium Priority', 60, 'Active'),
   ('Web Development', 'web-development', 'Web development service with lead tracking, client projects, follow-ups, and pending work.', 'Live Service', 'Medium Priority', 85, 'Active'),

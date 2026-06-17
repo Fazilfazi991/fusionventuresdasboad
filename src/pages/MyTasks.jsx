@@ -12,6 +12,7 @@ import { CalendarClock, CheckCircle2, ClipboardList, Clock3 } from 'lucide-react
 
 const ventureNames = [
   'Dearelle',
+  'Invitation Builder',
   'Plumlet',
   'Website Builder',
   'Web Development',

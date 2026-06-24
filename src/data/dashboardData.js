@@ -17,6 +17,7 @@ import {
   CircleCheckBig,
   CalendarClock,
   FileText,
+  Mail,
   Wallet,
   TimerReset,
   BellRing,
@@ -27,6 +28,7 @@ export const navItems = [
   { label: 'Ventures', icon: BriefcaseBusiness, to: '/ventures' },
   { label: 'Tasks', icon: CheckSquare, to: '/tasks' },
   { label: 'Web Dev Leads', icon: Code2, to: '/web-dev-leads' },
+  { label: 'Email Marketing', icon: Mail, to: '/email-marketing' },
   { label: 'Team', icon: UsersRound, to: '/team' },
   { label: 'Settings', icon: Settings, to: '/settings' },
 ];

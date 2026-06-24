@@ -3,6 +3,7 @@ import { MobileNav } from './components/MobileNav.jsx';
 import { ProtectedRoute } from './components/ProtectedRoute.jsx';
 import { Sidebar } from './components/Sidebar.jsx';
 import { Login } from './pages/Login.jsx';
+import { EmailMarketing } from './pages/EmailMarketing.jsx';
 import { MyTasks } from './pages/MyTasks.jsx';
 import { Overview } from './pages/Overview.jsx';
 import { Settings } from './pages/Settings.jsx';
@@ -31,6 +32,7 @@ export default function App() {
                     <Route path="/ventures/:ventureId" element={<VentureDetails />} />
                     <Route path="/tasks" element={<MyTasks />} />
                     <Route path="/web-dev-leads" element={<WebDevLeads />} />
+                    <Route path="/email-marketing" element={<EmailMarketing />} />
                     <Route path="/team" element={<Team />} />
                     <Route path="/settings" element={<Settings />} />
                     <Route path="*" element={<Navigate to="/overview" replace />} />

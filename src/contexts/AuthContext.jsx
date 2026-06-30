@@ -45,7 +45,8 @@ export function AuthProvider({ children }) {
         if (!supabase) {
           return {
             error: {
-              message: 'Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in Vercel.',
+                message:
+                  'Supabase is not configured. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in Vercel.',
             },
           };
         }

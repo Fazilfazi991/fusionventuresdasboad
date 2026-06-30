@@ -2,15 +2,15 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { MobileNav } from './components/MobileNav.jsx';
 import { ProtectedRoute } from './components/ProtectedRoute.jsx';
 import { Sidebar } from './components/Sidebar.jsx';
-import { Login } from './pages/Login.jsx';
-import { EmailMarketing } from './pages/EmailMarketing.jsx';
-import { MyTasks } from './pages/MyTasks.jsx';
-import { Overview } from './pages/Overview.jsx';
-import { Settings } from './pages/Settings.jsx';
-import { Team } from './pages/Team.jsx';
-import { VentureDetails } from './pages/VentureDetails.jsx';
-import { Ventures } from './pages/Ventures.jsx';
-import { WebDevLeads } from './pages/WebDevLeads.jsx';
+import { Login } from './fusion-pages/Login.jsx';
+import { EmailMarketing } from './fusion-pages/EmailMarketing.jsx';
+import { MyTasks } from './fusion-pages/MyTasks.jsx';
+import { Overview } from './fusion-pages/Overview.jsx';
+import { Settings } from './fusion-pages/Settings.jsx';
+import { Team } from './fusion-pages/Team.jsx';
+import { VentureDetails } from './fusion-pages/VentureDetails.jsx';
+import { Ventures } from './fusion-pages/Ventures.jsx';
+import { WebDevLeads } from './fusion-pages/WebDevLeads.jsx';
 
 export default function App() {
   return (

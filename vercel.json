@@ -1,8 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/email",
+      "destination": "/dashboard/email",
+      "permanent": false
     }
   ]
 }

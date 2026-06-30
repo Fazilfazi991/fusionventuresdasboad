@@ -29,6 +29,7 @@ export const navItems = [
   { label: 'Tasks', icon: CheckSquare, to: '/tasks' },
   { label: 'Web Dev Leads', icon: Code2, to: '/web-dev-leads' },
   { label: 'Email Marketing', icon: Mail, to: '/email-marketing' },
+  { label: 'Email Automation', icon: Mail, to: '/dashboard/email', external: true },
   { label: 'Team', icon: UsersRound, to: '/team' },
   { label: 'Settings', icon: Settings, to: '/settings' },
 ];

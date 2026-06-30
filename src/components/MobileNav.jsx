@@ -45,6 +45,17 @@ export function MobileNav() {
               const Icon = item.icon;
               const active = isActive(item);
               return (
+                item.external ? (
+                  <a
+                    key={item.label}
+                    href={item.to}
+                    onClick={() => setOpen(false)}
+                    className="flex min-h-11 items-center gap-2 rounded-lg bg-zinc-50 px-3 text-sm font-medium text-zinc-700"
+                  >
+                    <Icon className="h-4 w-4 shrink-0" />
+                    <span className="min-w-0 truncate">{item.label}</span>
+                  </a>
+                ) : (
                 <NavLink
                   key={item.label}
                   to={item.to}
@@ -56,6 +67,7 @@ export function MobileNav() {
                   <Icon className="h-4 w-4 shrink-0" />
                   <span className="min-w-0 truncate">{item.label}</span>
                 </NavLink>
+                )
               );
             })}
           </nav>

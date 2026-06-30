@@ -50,6 +50,20 @@ export function Sidebar() {
             (item.label === 'Ventures' && location.pathname.startsWith('/ventures/'));
 
           return (
+            item.external ? (
+              <a
+                key={item.label}
+                href={item.to}
+                className={`flex h-14 w-full items-center gap-4 rounded-lg px-4 text-left text-base transition ${
+                  location.pathname.startsWith('/email')
+                    ? 'bg-white/10 text-white shadow-lg shadow-black/20'
+                    : 'text-zinc-300 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                <Icon className="h-5 w-5" strokeWidth={2.2} />
+                <span className="font-medium">{item.label}</span>
+              </a>
+            ) : (
             <NavLink
               key={item.label}
               to={item.to}
@@ -62,6 +76,7 @@ export function Sidebar() {
               <Icon className="h-5 w-5" strokeWidth={2.2} />
               <span className="font-medium">{item.label}</span>
             </NavLink>
+            )
           );
         })}
       </nav>

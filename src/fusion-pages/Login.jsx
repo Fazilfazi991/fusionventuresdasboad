@@ -60,8 +60,8 @@ export function Login() {
         {!isSupabaseConfigured ? (
           <div className="mt-5 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm font-medium leading-6 text-zinc-700">
             Supabase is not configured for this deployment. Add Vercel environment variables:
-            <span className="mt-2 block font-mono text-xs">VITE_SUPABASE_URL</span>
-            <span className="block font-mono text-xs">VITE_SUPABASE_ANON_KEY</span>
+            <span className="mt-2 block font-mono text-xs">NEXT_PUBLIC_SUPABASE_URL</span>
+            <span className="block font-mono text-xs">NEXT_PUBLIC_SUPABASE_ANON_KEY</span>
           </div>
         ) : null}
 
